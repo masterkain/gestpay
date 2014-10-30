@@ -16,7 +16,7 @@ module Gestpay
     def initialize
       # SOAP Client operations:
       # => [:encrypt, :decrypt]
-      savon_options = {:wsdl => URL[Gestpay.config.environment], :ssl_version => :SSLv2}
+      savon_options = {:wsdl => URL[Gestpay.config.environment], :ssl_version => :TLSv1}
       if Gestpay.config.proxy
         savon_options.merge!({ :proxy=> URI.parse(Gestpay.config.proxy)})
       end
